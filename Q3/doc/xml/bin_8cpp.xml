@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="bin_8cpp" kind="file" language="C++">
+    <compoundname>bin.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="yes">bin.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>bin.h</label>
+      </node>
+      <node id="0">
+        <label>bin.cpp</label>
+        <link refid="bin_8cpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacestd">std</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="bin_8cpp_1ab8131a47078175e3a7ecaeda60c5f9a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dec2bin</definition>
+        <argsstring>(int num, int potencia, int binario)</argsstring>
+        <name>dec2bin</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>potencia</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>binario</declname>
+        </param>
+        <briefdescription>
+<para>Função para conversão recursiva de um número em base decimal para binário. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o número passado pelo usuário para realizar a conversão. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>potencia</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número para controle e representação na conversão de decimal para binário. Faz-se uma analogia dessa variável ao controle de unidades, dezenas, centenas, etc. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>binario</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o resultado da conversão da base decimal para binário. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna o resultado da conversão, com o número inserido em binário. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bin.cpp" line="20" column="1" bodyfile="bin.cpp" bodystart="20" bodyend="32"/>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="17" endline="28">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Função para conversão recursiva de um número em base decimal para binário. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Rodolpho Erick </para></simplesect>
+<simplesect kind="since"><para>18/03/2017  19/03/2017 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;bin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="bin_8cpp_1ab8131a47078175e3a7ecaeda60c5f9a1" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="bin_8cpp_1ab8131a47078175e3a7ecaeda60c5f9a1" kindref="member">dec2bin</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>potencia,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>binario)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>binario<sp/>+=<sp/>(num<sp/>%<sp/>2)<sp/>*<sp/>potencia;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>num<sp/>=<sp/>num<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>potencia<sp/>=<sp/>potencia<sp/>*<sp/>10;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num<sp/>&lt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>binario;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>binario<sp/>=<sp/><ref refid="bin_8cpp_1ab8131a47078175e3a7ecaeda60c5f9a1" kindref="member">dec2bin</ref>(num,<sp/>potencia,<sp/>binario);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>binario;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="bin.cpp"/>
+  </compounddef>
+</doxygen>

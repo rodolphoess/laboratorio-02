@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="funcao_a_8cpp" kind="file" language="C++">
+    <compoundname>funcaoA.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="yes">funcaoA.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>funcaoA.h</label>
+      </node>
+      <node id="0">
+        <label>funcaoA.cpp</label>
+        <link refid="funcao_a_8cpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacestd">std</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="funcao_a_8cpp_1a93e8e0a76c33f6be41a6d3bb989cc315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float recursaoA</definition>
+        <argsstring>(float num, float temp, float result)</argsstring>
+        <name>recursaoA</name>
+        <param>
+          <type>float</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>temp</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Função para cálculo recursivo da sequencia A proposta no exercício do laboratório 2 de LP1. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o número passado pelo usuário para realizar o cálculo da sequência. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>temp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa um valor para controle da recursao. O limite dessa variável é o valor do número passado pelo usuário. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o resultado da soma da sequência, é ele que será exibido ao usuário. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna o resultado da soma representada pela sequência. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="funcaoA.cpp" line="20" column="1" bodyfile="funcaoA.cpp" bodystart="20" bodyend="30"/>
+        <referencedby refid="sequencia_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="sequencia_8cpp" startline="22" endline="39">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="funcao_a_8cpp_1af0b8f0b007f15848a720738934d34c4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float iteracaoA</definition>
+        <argsstring>(float num)</argsstring>
+        <name>iteracaoA</name>
+        <param>
+          <type>float</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Função para cálculo iterativo da sequencia A proposta no exercício do laboratório 2 de LP1. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o número passado pelo usuário para realizar o cálculo da sequência. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna o resultado da soma representada pela sequência. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="funcaoA.cpp" line="37" column="1" bodyfile="funcaoA.cpp" bodystart="37" bodyend="49"/>
+        <referencedby refid="sequencia_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="sequencia_8cpp" startline="22" endline="39">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Funções para cálculo recursivo e iterativo da sequencia A proposto no exercício. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Rodolpho Erick </para></simplesect>
+<simplesect kind="since"><para>18/03/2017  19/03/2017 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;funcaoA.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="funcao_a_8cpp_1a93e8e0a76c33f6be41a6d3bb989cc315" refkind="member"><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="funcao_a_8cpp_1a93e8e0a76c33f6be41a6d3bb989cc315" kindref="member">recursaoA</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>num,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>temp,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>result)<sp/>{<sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>temp++;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(temp<sp/>==<sp/>num)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>result<sp/>+<sp/>(1<sp/>/<sp/>num);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>1/temp<sp/>+<sp/><ref refid="funcao_a_8cpp_1a93e8e0a76c33f6be41a6d3bb989cc315" kindref="member">recursaoA</ref>(num,<sp/>temp,<sp/>result);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="funcao_a_8cpp_1af0b8f0b007f15848a720738934d34c4f" refkind="member"><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="funcao_a_8cpp_1af0b8f0b007f15848a720738934d34c4f" kindref="member">iteracaoA</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>num)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>result<sp/>+<sp/>(1<sp/>/<sp/>num);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;=<sp/>num;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>result<sp/>+<sp/>(1<sp/>/<sp/>i);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;<sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="funcaoA.cpp"/>
+  </compounddef>
+</doxygen>

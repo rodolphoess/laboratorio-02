@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="quadrado__iterativo_8cpp" kind="file" language="C++">
+    <compoundname>quadrado_iterativo.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="yes">quadrado_iterativo.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>iostream</label>
+      </node>
+      <node id="12">
+        <label>quadrado_iterativo.h</label>
+      </node>
+      <node id="10">
+        <label>quadrado_iterativo.cpp</label>
+        <link refid="quadrado__iterativo_8cpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="quadrado__iterativo_8cpp_1a3792389add58119326e59ce153e31b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int quadradoIterativo</definition>
+        <argsstring>(int dobroNum, int numQuadrado)</argsstring>
+        <name>quadradoIterativo</name>
+        <param>
+          <type>int</type>
+          <declname>dobroNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numQuadrado</declname>
+        </param>
+        <briefdescription>
+<para>Função para cálculo recursivo do quadrado de um número natural. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dobroNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o dobro do número inserido pelo usuário por linha de comando. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numQuadrado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o número já ao quadrado informado pelo usuário. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna o resultado da soma de todos os números ímpares que representarão o quadrado do número inserido. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="quadrado_iterativo.cpp" line="18" column="1" bodyfile="quadrado_iterativo.cpp" bodystart="18" bodyend="30"/>
+        <referencedby refid="main_iterativo_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_iterativo_8cpp" startline="18" endline="32">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Rodolpho Erick </para></simplesect>
+<simplesect kind="since"><para>18/03/2017  19/03/2017 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;quadrado_iterativo.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="quadrado__iterativo_8cpp_1a3792389add58119326e59ce153e31b1f" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="quadrado__iterativo_8cpp_1a3792389add58119326e59ce153e31b1f" kindref="member">quadradoIterativo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dobroNum,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numQuadrado)<sp/>{<sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resultado<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>2;<sp/>i<sp/>&lt;<sp/>dobroNum;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>%<sp/>2<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>+<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resultado<sp/>+=<sp/>i;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resultado;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}<sp/><sp/><sp/></highlight></codeline>
+    </programlisting>
+    <location file="quadrado_iterativo.cpp"/>
+  </compounddef>
+</doxygen>
