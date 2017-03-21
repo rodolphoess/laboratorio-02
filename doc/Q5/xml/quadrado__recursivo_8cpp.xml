@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="quadrado__recursivo_8cpp" kind="file" language="C++">
+    <compoundname>quadrado_recursivo.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="yes">quadrado_recursivo.h</includes>
+    <incdepgraph>
+      <node id="16">
+        <label>quadrado_recursivo.h</label>
+      </node>
+      <node id="14">
+        <label>quadrado_recursivo.cpp</label>
+        <link refid="quadrado__recursivo_8cpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="quadrado__recursivo_8cpp_1ab5607d7426f0c6770c266d1ab199506a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int quadradoRecursivo</definition>
+        <argsstring>(int dobroNum, int numQuadrado, int resultado, int temp)</argsstring>
+        <name>quadradoRecursivo</name>
+        <param>
+          <type>int</type>
+          <declname>dobroNum</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numQuadrado</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>resultado</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>temp</declname>
+        </param>
+        <briefdescription>
+<para>Função para cálculo recursivo do quadrado de um número natural. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dobroNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o dobro do número inserido pelo usuário por linha de comando. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numQuadrado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o número já ao quadrado informado pelo usuário. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>resultado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Representa o resultado da soma de todos os número ímpares anteriores ao dobro do número informado por linha de comando. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>temp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variável de controle para checar se os números anteriores ao dobro são ímpares ou não, sendo ímpares soma-se esses valores à variável resultado. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Retorna o resultado da soma de todos os números ímpares que representarão o quadrado do número inserido. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="quadrado_recursivo.cpp" line="20" column="1" bodyfile="quadrado_recursivo.cpp" bodystart="20" bodyend="32"/>
+        <referencedby refid="main_recursivo_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_recursivo_8cpp" startline="18" endline="36">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Rodolpho Erick </para></simplesect>
+<simplesect kind="since"><para>18/03/2017  19/03/2017 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;quadrado_recursivo.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="quadrado__recursivo_8cpp_1ab5607d7426f0c6770c266d1ab199506a" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="quadrado__recursivo_8cpp_1ab5607d7426f0c6770c266d1ab199506a" kindref="member">quadradoRecursivo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dobroNum,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numQuadrado,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resultado,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>temp)<sp/>{<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>temp++;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(resultado<sp/>==<sp/>numQuadrado)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>resultado;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(temp<sp/>%<sp/>2<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>+<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>temp;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resultado<sp/>+=<sp/>temp;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="quadrado__recursivo_8cpp_1ab5607d7426f0c6770c266d1ab199506a" kindref="member">quadradoRecursivo</ref>(dobroNum,<sp/>numQuadrado,<sp/>resultado,<sp/>temp);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}<sp/><sp/><sp/></highlight></codeline>
+    </programlisting>
+    <location file="quadrado_recursivo.cpp"/>
+  </compounddef>
+</doxygen>
