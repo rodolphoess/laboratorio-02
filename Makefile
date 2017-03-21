@@ -22,7 +22,6 @@ LIB_DIR=./lib
 INC_DIR=./include
 SRC_DIR=./src
 OBJ_DIR=./build
-BIN_DIR=./bin
 DOC_DIR=./doc
 TEST_DIR=./test
 
@@ -34,9 +33,9 @@ PROG4=palindromo
 PROG5=quadrado_iterativo
 PROG6=quadrado_recursivo
 PROG7=ternaria
- 
+
 # Opcoes de compilacao
-CFLAGS=-Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)
+CFLAGS=-Wall -pedantic -ansi -std=c++11 -g -O0 -I. -I$(INC_DIR)
 
 # Garante que os alvos desta lista nao sejam confundidos com arquivos de mesmo nome
 .PHONY: all clean doxy debug doc
@@ -53,7 +52,9 @@ debug: $(PROG1) $(PROG2) $(PROG3) $(PROG4) $(PROG5) $(PROG6) $(PROG7)
 
 # Alvo (target) para a construcao do executavel sequencia
 # Define os arquivos *.o como dependencias
-$(PROG1): $(OBJ_DIR)/funcaoA.o $(OBJ_DIR)/funcaoB.o $(OBJ_DIR)/sequencia.o
+$(PROG1): CFLAGS += -I$(INC_DIR)/Q1
+$(PROG1): BIN_DIR=./bin/Q1
+$(PROG1): $(OBJ_DIR)/Q1/funcaoA.o $(OBJ_DIR)/Q1/funcaoB.o $(OBJ_DIR)/Q1/sequencia.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -63,17 +64,17 @@ $(PROG1): $(OBJ_DIR)/funcaoA.o $(OBJ_DIR)/funcaoB.o $(OBJ_DIR)/sequencia.o
 
 # Alvo (target) para a construcao do objeto funcaoA.o
 # Define os arquivos funcaoA.cpp e funcaoA.h como dependencias.
-$(OBJ_DIR)/funcaoA.o: $(SRC_DIR)/funcaoA.cpp $(INC_DIR)/funcaoA.h
+$(OBJ_DIR)/Q1/funcaoA.o: $(SRC_DIR)/Q1/funcaoA.cpp $(INC_DIR)/Q1/funcaoA.h
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # Alvo (target) para a construcao do objeto funcaoB.o
 # Define os arquivos funcaoB.cpp e funcaoB.h como dependencias.
-$(OBJ_DIR)/funcaoB.o: $(SRC_DIR)/funcaoB.cpp $(INC_DIR)/funcaoB.h
+$(OBJ_DIR)/Q1/funcaoB.o: $(SRC_DIR)/Q1/funcaoB.cpp $(INC_DIR)/Q1/funcaoB.h
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # Alvo (target) para a construcao do objeto sequencia.o
 # Define os arquivos sequencia.cpp como dependencias.
-$(OBJ_DIR)/sequencia.o: $(SRC_DIR)/sequencia.cpp
+$(OBJ_DIR)/Q1/sequencia.o: $(SRC_DIR)/Q1/sequencia.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 
@@ -81,7 +82,9 @@ $(OBJ_DIR)/sequencia.o: $(SRC_DIR)/sequencia.cpp
 
 # Alvo (target) para a construcao do executavel mdc
 # Define os arquivos *.o como dependencias
-$(PROG2): $(OBJ_DIR)/mdc.o $(OBJ_DIR)/main.o
+$(PROG2): CFLAGS += -I$(INC_DIR)/Q2
+$(PROG2): BIN_DIR=./bin/Q2
+$(PROG2): $(OBJ_DIR)/Q2/mdc.o $(OBJ_DIR)/Q2/mainq2.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -91,12 +94,12 @@ $(PROG2): $(OBJ_DIR)/mdc.o $(OBJ_DIR)/main.o
 
 # Alvo (target) para a construcao do objeto mdc.o
 # Define os arquivos mdc.cpp e mdc.h como dependencias.
-$(OBJ_DIR)/mdc.o: $(SRC_DIR)/mdc.cpp $(INC_DIR)/mdc.h
+$(OBJ_DIR)/Q2/mdc.o: $(SRC_DIR)/Q2/mdc.cpp $(INC_DIR)/Q2/mdc.h
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 # Alvo (target) para a construcao do objeto main.o
 # Define os arquivos main.cpp como dependencias.
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
+$(OBJ_DIR)/Q2/mainq2.o: $(SRC_DIR)/Q2/mainq2.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 
@@ -104,7 +107,9 @@ $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 
 # Alvo (target) para a construcao do executavel dec2bin
 # Define os arquivos *.o como dependencias
-$(PROG3): $(OBJ_DIR)/bin.o $(OBJ_DIR)/main.o
+$(PROG3): CFLAGS += -I$(INC_DIR)/Q3 
+$(PROG3): BIN_DIR=./bin/Q3
+$(PROG3): $(OBJ_DIR)/Q3/bin.o $(OBJ_DIR)/Q3/mainq3.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -114,12 +119,12 @@ $(PROG3): $(OBJ_DIR)/bin.o $(OBJ_DIR)/main.o
 
 # Alvo (target) para a construcao do objeto bin.o
 # Define os arquivos bin.cpp e bin.h como dependencias.
-$(OBJ_DIR)/bin.o: $(SRC_DIR)/bin.cpp $(INC_DIR)/bin.h
+$(OBJ_DIR)/Q3/bin.o: $(SRC_DIR)/Q3/bin.cpp $(INC_DIR)/Q3/bin.h
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 # Alvo (target) para a construcao do objeto main.o
 # Define os arquivos main.cpp como dependencias.
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
+$(OBJ_DIR)/Q3/mainq3.o: $(SRC_DIR)/Q3/mainq3.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 
@@ -127,7 +132,9 @@ $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 
 # Alvo (target) para a construcao do executavel palindromo
 # Define os arquivos *.o como dependencias
-$(PROG4): $(OBJ_DIR)/palindromo.o $(OBJ_DIR)/main.o
+$(PROG4): CFLAGS += -I$(INC_DIR)/Q4
+$(PROG4): BIN_DIR=./bin/Q4
+$(PROG4): $(OBJ_DIR)/Q4/palindromo.o $(OBJ_DIR)/Q4/mainq4.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -137,12 +144,12 @@ $(PROG4): $(OBJ_DIR)/palindromo.o $(OBJ_DIR)/main.o
 
 # Alvo (target) para a construcao do objeto palindromo.o
 # Define os arquivos palindromo.cpp e palindromo.h como dependencias.
-$(OBJ_DIR)/palindromo.o: $(SRC_DIR)/palindromo.cpp $(INC_DIR)/palindromo.h
+$(OBJ_DIR)/Q4/palindromo.o: $(SRC_DIR)/Q4/palindromo.cpp $(INC_DIR)/Q4/palindromo.h
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 # Alvo (target) para a construcao do objeto main.o
 # Define os arquivos main.cpp como dependencias.
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
+$(OBJ_DIR)/Q4/mainq4.o: $(SRC_DIR)/Q4/mainq4.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 
@@ -150,8 +157,10 @@ $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 
 # Alvo (target) para a construcao do executavel quadrado_iterativo
 # Define os arquivos *.o como dependencias
-$(PROG5): $(OBJ_DIR)/quadrado_iterativo.o $(OBJ_DIR)/mainIterativo.o
-	@echo "============="
+$(PROG5): CFLAGS += -I$(INC_DIR)/Q5
+$(PROG5): BIN_DIR=./bin/Q5
+$(PROG5): $(OBJ_DIR)/Q5/quadrado_iterativo.o $(OBJ_DIR)/Q5/mainIterativo.o
+	@echo "============"
 	@echo "Ligando o alvo $@"
 	@echo "============="
 	$(CC) $(CFLAGS) -o $(BIN_DIR)/$@ $^
@@ -160,12 +169,12 @@ $(PROG5): $(OBJ_DIR)/quadrado_iterativo.o $(OBJ_DIR)/mainIterativo.o
 
 # Alvo (target) para a construcao do objeto quadrado_iterativo.o
 # Define os arquivos quadrado_iterativo.cpp e quadrado_iterativo.h como dependencias.
-$(OBJ_DIR)/quadrado_iterativo.o: $(SRC_DIR)/quadrado_iterativo.cpp $(INC_DIR)/quadrado_iterativo.h
+$(OBJ_DIR)/Q5/quadrado_iterativo.o: $(SRC_DIR)/Q5/quadrado_iterativo.cpp $(INC_DIR)/Q5/quadrado_iterativo.h
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 # Alvo (target) para a construcao do objeto mainIterativo.o
 # Define os arquivos mainIterativo.cpp como dependencias.
-$(OBJ_DIR)/mainIterativo.o: $(SRC_DIR)/mainIterativo.cpp
+$(OBJ_DIR)/Q5/mainIterativo.o: $(SRC_DIR)/Q5/mainIterativo.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 
@@ -173,7 +182,9 @@ $(OBJ_DIR)/mainIterativo.o: $(SRC_DIR)/mainIterativo.cpp
 
 # Alvo (target) para a construcao do executavel quadrado_recursivo
 # Define os arquivos *.o como dependencias
-$(PROG6): $(OBJ_DIR)/quadrado_recursivo.o $(OBJ_DIR)/mainRecursivo.o
+$(PROG6): CFLAGS += -I$(INC_DIR)/Q5
+$(PROG6): BIN_DIR=./bin/Q5
+$(PROG6): $(OBJ_DIR)/Q5/quadrado_recursivo.o $(OBJ_DIR)/Q5/mainRecursivo.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -183,12 +194,12 @@ $(PROG6): $(OBJ_DIR)/quadrado_recursivo.o $(OBJ_DIR)/mainRecursivo.o
 
 # Alvo (target) para a construcao do objeto quadrado_recursivo.o
 # Define os arquivos quadrado_recursivo.cpp e quadrado_recursivo.h como dependencias.
-$(OBJ_DIR)/quadrado_recursivo.o: $(SRC_DIR)/quadrado_recursivo.cpp $(INC_DIR)/quadrado_recursivo.h
+$(OBJ_DIR)/Q5/quadrado_recursivo.o: $(SRC_DIR)/Q5/quadrado_recursivo.cpp $(INC_DIR)/Q5/quadrado_recursivo.h
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 # Alvo (target) para a construcao do objeto mainRecursivo.o
 # Define os arquivos mainRecursivo.cpp como dependencias.
-$(OBJ_DIR)/mainRecursivo.o: $(SRC_DIR)/mainRecursivo.cpp
+$(OBJ_DIR)/Q5/mainRecursivo.o: $(SRC_DIR)/Q5/mainRecursivo.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<		
 
 
@@ -196,7 +207,9 @@ $(OBJ_DIR)/mainRecursivo.o: $(SRC_DIR)/mainRecursivo.cpp
 
 # Alvo (target) para a construcao do executavel ternaria
 # Define os arquivos *.o como dependencias
-$(PROG7): $(OBJ_DIR)/buscaT.o $(OBJ_DIR)/main.o
+$(PROG7): CFLAGS += -I$(INC_DIR)/Q6
+$(PROG7): BIN_DIR=./bin/Q6
+$(PROG7): $(OBJ_DIR)/Q6/buscaT.o $(OBJ_DIR)/Q6/mainq6.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -206,11 +219,11 @@ $(PROG7): $(OBJ_DIR)/buscaT.o $(OBJ_DIR)/main.o
 
 # Alvo (target) para a construcao do objeto buscaT.o
 # Define os arquivos buscaT.cpp e buscaT.h como dependencias.
-$(OBJ_DIR)/buscaT.o: $(SRC_DIR)/buscaT.cpp $(INC_DIR)/buscaT.h
+$(OBJ_DIR)/Q6/buscaT.o: $(SRC_DIR)/Q6/buscaT.cpp $(INC_DIR)/Q6/buscaT.h
 	$(CC) -c $(CFLAGS) -o $@ $<	
 
 # Alvo (target) para a construcao do objeto main.o
 # Define os arquivos main.cpp como dependencias.
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
+$(OBJ_DIR)/Q6/mainq6.o: $(SRC_DIR)/Q6/mainq6.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<		
 
